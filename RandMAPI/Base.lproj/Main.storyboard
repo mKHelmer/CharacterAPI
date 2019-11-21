@@ -6,21 +6,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Rick & Morty Character Search-->
         <scene sceneID="6EZ-Bm-Jro">
             <objects>
-                <tableViewController id="d5r-XI-ocT" sceneMemberID="viewController">
+                <tableViewController id="d5r-XI-ocT" customClass="CharacterTableViewController" customModule="RandMAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RsO-J1-Kyt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Wubalubdub! Search a person, broh." id="gxv-bS-ywI">
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search a person, broh." id="gxv-bS-ywI">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="180" id="nER-D2-0OL">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="characterCell" rowHeight="180" id="nER-D2-0OL" customClass="CharacterTableViewCell" customModule="RandMAPI" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="414" height="180"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nER-D2-0OL" id="0jX-MB-t2g">
@@ -66,6 +66,12 @@
                                         <constraint firstItem="8Yv-Gu-Qr9" firstAttribute="top" secondItem="0jX-MB-t2g" secondAttribute="topMargin" constant="4" id="oK3-lO-Aln"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="characterImage" destination="8Yv-Gu-Qr9" id="gFK-AS-Dl2"/>
+                                    <outlet property="characterLabel" destination="gdJ-Yb-l1n" id="Iz8-sR-GXm"/>
+                                    <outlet property="characterSpecies" destination="A7a-nF-rut" id="HTl-tU-rSI"/>
+                                    <outlet property="characterStatus" destination="ZrW-bE-bMu" id="Mqn-gm-2yd"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -73,7 +79,7 @@
                             <outlet property="delegate" destination="d5r-XI-ocT" id="nNV-VP-rzU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Yxr-4G-DVz"/>
+                    <navigationItem key="navigationItem" title="Rick &amp; Morty Character Search" id="Yxr-4G-DVz"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgk-PF-pr6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
